@@ -1,0 +1,9 @@
+min z = x1 + x2 + x3 + x4 + x5 + x6 + x7
+subject to
+x1 + x4 + x5 + x6 + x7 >= 17
+x1 + x2 + x5 + x6 + x7 >= 13
+x1 + x2 + x3 + x6 + x7 >= 15
+x1 + x2 + x3 + x4 + x7 >= 19
+x1 + x2 + x3 + x4 + x5 >= 14
+x2 + x3 + x4 + x5 + x6 >= 16
+x3 + x4 + x5 + x6 + x7 >= 11

@@ -1,0 +1,6 @@
+max z = 30*Rosen + 25*Nelken + 20*Dahlien
+subject to
+5*Rosen + 2,5*Nelken + 2*Dahlien <= 20000
+100*Rosen + 90*Nelken + 120*Dahlien <= 700000
+0,5*Rosen + 0,3*Nelken + 0,2*Dahlien <= 2500
+Rosen + Nelken + Dahlien <= 5000

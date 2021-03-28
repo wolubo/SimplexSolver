@@ -1,0 +1,166 @@
+/**
+ * Grammar of the script language.
+ *
+ * @author Wolfgang Bongartz
+ */options{  JDK_VERSION = "1.5";
+  IGNORE_CASE = true;			// Generate a case-insensitive scanner.  static = false;				// Generate a dynamic parser.
+//  LOOKAHEAD=3;					// Look 3 tokens ahead.
+  FORCE_LA_CHECK=true;			// Force lookahead-checking
+//  DEBUG_PARSER=true;
+//  DEBUG_TOKEN_MANAGER=true;//  DEBUG_LOOKAHEAD=true;
+}PARSER_BEGIN(Parser)
+package parser; 
+import java.util.Locale;
+import java.text.NumberFormat;
+import lp_problem.*;
+/**
+* Parser for the script language.
+*
+* @author Wolfgang Bongartz
+*/public class Parser{
+  /**
+  * Constructor.
+  * @param s Script to be parsed.
+  */  public Parser(String s)  {    this (new java.io.StringReader(s));  }
+  /**
+  * Re-initialize the parser.
+  * @param s Script to be parsed.
+  */  public void ReInit(String s)  {    ReInit(new java.io.StringReader(s));  }}PARSER_END(Parser)SKIP :{  " "| "\r"| "\t"| "\n"}TOKEN : /* OPERATORS */{  < SUBJECT          : "subject" >
+| < TO               : "to" >| < OP_EQUAL         : "=" >| < OP_LESS_OR_EQUAL : "<=" >| < OP_MORE_OR_EQUAL : ">=" >| < OP_LESS          : "<" >| < OP_MORE          : ">" >
+| < OP_ADD           : "+" > 
+| < OP_SUB           : "-" > 
+| < MULTIPLY         : "*" > 
+| < MIN              : "min" > 
+| < MAX              : "max" > 
+}
+TOKEN :{  < NUMBER : (< DIGIT >)+ ("," (<DIGIT>)+ )? >
+| < #DIGIT : [ "0"-"9" ] >| < IDENTIFIER : [ "a"-"z" ] ( [ "a"-"z" ] | <DIGIT> )* >}
+LPProblem lp_definition() :{
+  TargetFunction tf;
+  Restriction r;  LPProblem lpp = null;
+}{
+  (    
+  	tf=target_function() { lpp=new LPProblem(tf); }
+  	<SUBJECT> <TO>
+  	(  	  r=restriction() { lpp.addRestriction(r); }
+  	)+
+  	<EOF>
+  )  {
+    return lpp;
+  }}
+
+TargetFunction target_function() :
+{  String id=null;
+  LinearCombination lc=null;
+  TargetFunctionType tft=null;
+}
+{
+  (
+    (
+        <MIN> { tft=TargetFunctionType.MIN; }
+      | <MAX> { tft=TargetFunctionType.MAX; }
+    )    id=identifier() <OP_EQUAL> lc=linear_combination()
+  )
+  {
+	return new TargetFunction(id, tft, lc);
+  }}
+
+Restriction restriction() :
+{
+  LinearCombination lc;
+  Operator op;
+  Double num;
+}
+{
+  (    lc=linear_combination() op=operator() num=number_value()
+  )
+  {
+    Restriction r = new Restriction(lc, op, num);
+    return r;  }
+}
+
+
+LinearCombination linear_combination() :
+{
+  LinearCombination lc = new LinearCombination();
+  boolean neg=false;
+}
+{
+  (
+    <OP_ADD> { neg=false; } | <OP_SUB> { neg=true; }
+  )?
+  linearComponent(lc, neg)
+  (
+	(
+  		<OP_ADD> { neg=false; } | <OP_SUB> { neg=true; }
+  	)
+  	linearComponent(lc, neg)
+  )*
+  {
+    return lc;  }
+}
+Operator operator() :
+{
+}
+{
+	  <OP_EQUAL>         { return Operator.EQUAL; }
+	| <OP_LESS_OR_EQUAL> { return Operator.LESS_OR_EQUAL; }
+	| <OP_MORE_OR_EQUAL> { return Operator.MORE_OR_EQUAL; }
+	| <OP_LESS>          { return Operator.LESS; }
+	| <OP_MORE>          { return Operator.MORE; }
+}
+void linearComponent(LinearCombination lc, boolean negate) :
+{
+  Double v=null;
+  String id=null;
+}
+{
+  (
+	  v=number_value() [[<MULTIPLY>] id=identifier()]
+	| id=identifier()
+  )
+  {
+    if(id==null)    {
+      if(negate) v=new Double(-v);
+      lc.addConstComponent(v);
+    } else {
+      if(v==null) v=new Double(1.0);
+      if(negate) v=new Double(-v);
+      lc.addVarComponent(new VarComponent(v,id));
+    }  }
+}
+
+Double number_value() :
+{
+  Token t;}
+{
+  t = <NUMBER>
+  {
+    NumberFormat nf = NumberFormat.getInstance(Locale.GERMAN);
+Number n;
+	try {
+		n = nf.parse(t.image);
+	} catch (java.text.ParseException e) {
+		throw new ParseException();
+	}
+    return n.doubleValue();
+  }}
+
+String identifier()
+ :
+{
+  String s="";
+  Token t;
+}
+{
+    (
+      t = < IDENTIFIER >
+      {
+	    s = t.image;
+	    s = s.substring(0,s.length());
+      }
+    )
+  {
+    return s;
+  }
+}

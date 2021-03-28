@@ -1,0 +1,8 @@
+max	z = 5000 fa  + 4000 fi
+
+subject to 	
+6 fa  + 4 fi <=	24	
+  fa  + 2 fi <=	6	
+          fi <=	2	
+ -fa  +   fi <=	1	
+

@@ -1,0 +1,5 @@
+max z = 100R + 50T
+subject to
+15R+10T<=45
+R+T>=2,5
+

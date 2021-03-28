@@ -1,0 +1,6 @@
+max G = 24Xr + 22 Xg + 45Xb
+subject to
+2Xr + Xg + 3Xb <= 42
+2Xr + Xg + 2Xb <= 40
+Xr + 0,5Xg + Xb <= 45
+
