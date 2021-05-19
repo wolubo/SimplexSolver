@@ -1,16 +1,10 @@
-/**
- * 
- */
-package lp_problem.unittest;
+package de.wbongartz.simplex_solver.lp_problem;
 
-import static org.junit.Assert.*;
-import lp_problem.LinearCombination;
-import lp_problem.Operator;
-import lp_problem.Restriction;
-import lp_problem.VarComponent;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.fail;
+
 
 /**
  * @author Wolfgang Bongartz
@@ -20,11 +14,8 @@ public class RestrictionTest {
 	
 	private Restriction r1, r1_eq, r2;
 
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@Before
-	public void setUp() throws Exception {
+	@BeforeEach
+	public void setUp() {
 		LinearCombination lc1, lc1_eq, lc2;
 		
 		lc1 = new LinearCombination();
@@ -46,9 +37,6 @@ public class RestrictionTest {
 		r2 = new Restriction(lc2, Operator.EQUAL, -100.0);
 	}
 
-	/**
-	 * Test method for {@link lp_problem.Restriction#Restriction(lp_problem.LinearCombination, lp_problem.Operator, java.lang.Double)}.
-	 */
 	@Test
 	public final void testRestriction() {
 		
@@ -126,7 +114,7 @@ public class RestrictionTest {
 	}
 
 	/**
-	 * Test method for {@link lp_problem.Restriction#hashCode()}.
+	 * Test method for {@link Restriction#hashCode()}.
 	 */
 	@Test
 	public final void testHashCode() {
@@ -135,7 +123,7 @@ public class RestrictionTest {
 	}
 
 	/**
-	 * Test method for {@link lp_problem.Restriction#equals(java.lang.Object)}.
+	 * Test method for {@link Restriction#equals(java.lang.Object)}.
 	 */
 	@Test
 	public final void testEqualsObject() {
@@ -144,14 +132,14 @@ public class RestrictionTest {
 	}
 
 	/**
-	 * Test method for {@link lp_problem.Restriction#clone()}.
+	 * Test method for {@link Restriction#clone()}.
 	 */
 	@Test
 	public final void testClone() {
 	}
 
 	/**
-	 * Test method for {@link lp_problem.Restriction#toString()}.
+	 * Test method for {@link Restriction#toString()}.
 	 */
 	@Test
 	public final void testToString() {

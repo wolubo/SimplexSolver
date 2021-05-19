@@ -1,10 +1,10 @@
-package solver;
+package de.wbongartz.simplex_solver.solver;
 
 import java.util.ArrayList;
 
-import process.*;
-import process.ProcessEnvironment;
-import simplex_problem.SimplexProblem;
+import de.wbongartz.simplex_solver.process.*;
+import de.wbongartz.simplex_solver.process.ProcessEnvironment;
+import de.wbongartz.simplex_solver.simplex_problem.SimplexProblem;
 
 /**
  * Pivot-Zeile ermitteln.

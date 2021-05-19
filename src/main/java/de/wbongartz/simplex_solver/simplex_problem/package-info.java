@@ -5,4 +5,4 @@
  * 
  * @author Wolfgang Bongartz
  */
-package simplex_problem;
+package de.wbongartz.simplex_solver.simplex_problem;

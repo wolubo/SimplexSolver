@@ -1,19 +1,19 @@
 plugins {
-//    id 'application'
+    id 'application'
     id 'java'
     id "com.intershop.gradle.javacc" version "4.0.1"
 }
 
-//application {
-//    mainClass = 'de.wolfgang_bongartz.cellular_automaton.gui.MainWindow'
-//}
+application {
+    mainClass = 'de.wbongartz.simplex_solver.SimplexSolver'
+}
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    implementation group: 'net.java.dev.javacc', name: 'javacc', version: '7.0.4'
+    //implementation group: 'net.java.dev.javacc', name: 'javacc', version: '7.0.4'
     implementation 'org.apache.commons:commons-math3:3.6.1'
 }
 
@@ -26,10 +26,23 @@ javacc {
     }
 }
 
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
 jar {
     manifest {
         attributes(
                 'Main-Class': 'de.wolfgang_bongartz.simplex_solver.SimplexSolver'
         )
     }
+}
+
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
 }

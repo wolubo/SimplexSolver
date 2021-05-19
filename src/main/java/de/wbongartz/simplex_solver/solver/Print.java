@@ -1,7 +1,7 @@
-package solver;
+package de.wbongartz.simplex_solver.solver;
 
-import process.ExitProcess;
-import process.ProcessError;
+import de.wbongartz.simplex_solver.process.ExitProcess;
+import de.wbongartz.simplex_solver.process.ProcessError;
 
 /**
  * Ausgeben eines Textes.

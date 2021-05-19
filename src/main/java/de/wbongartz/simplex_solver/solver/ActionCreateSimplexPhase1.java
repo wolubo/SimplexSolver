@@ -1,13 +1,14 @@
-package solver;
+package de.wbongartz.simplex_solver.solver;
 
 import java.util.ArrayList;
 
-import process.ExitProcess;
-import process.ProcessEnvironment;
-import process.ProcessError;
-import process.ProcessStep;
-import simplex_problem.SimplexProblem;
-import simplex_problem.SimplexProblemPhase1;
+import de.wbongartz.simplex_solver.process.ExitProcess;
+import de.wbongartz.simplex_solver.process.ProcessEnvironment;
+import de.wbongartz.simplex_solver.process.ProcessError;
+import de.wbongartz.simplex_solver.process.ProcessStep;
+import de.wbongartz.simplex_solver.simplex_problem.SimplexProblem;
+import de.wbongartz.simplex_solver.simplex_problem.SimplexProblemPhase1;
+
 
 /**
  * Hilfsproblem für Phase I erzeugen.

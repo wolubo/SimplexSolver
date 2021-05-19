@@ -1,11 +1,11 @@
-package solver;
+package de.wbongartz.simplex_solver.solver;
 
 import java.util.HashSet;
 import java.util.TreeSet;
 
-import lp_problem.LPProblem;
-import lp_problem.Restriction;
-import process.*;
+import de.wbongartz.simplex_solver.lp_problem.LPProblem;
+import de.wbongartz.simplex_solver.lp_problem.Restriction;
+import de.wbongartz.simplex_solver.process.*;
 
 /**
  * Erzeugen der Standardgleichungsform: Hinzufügen der Schlupfvariablen.

@@ -1,7 +1,7 @@
-package solver;
+package de.wbongartz.simplex_solver.solver;
 
-import process.*;
-import process.statements.*;
+import de.wbongartz.simplex_solver.process.*;
+import de.wbongartz.simplex_solver.process.statements.*;
 
 
 /**

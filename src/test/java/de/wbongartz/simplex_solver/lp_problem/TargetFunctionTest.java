@@ -1,16 +1,11 @@
-/**
- * 
- */
-package lp_problem.unittest;
+package de.wbongartz.simplex_solver.lp_problem;
 
-import static org.junit.Assert.*;
-import lp_problem.LinearCombination;
-import lp_problem.TargetFunction;
-import lp_problem.TargetFunctionType;
-import lp_problem.VarComponent;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.fail;
+
 
 /**
  * @author Wolfgang Bongartz
@@ -20,11 +15,8 @@ public class TargetFunctionTest {
 	
 	private TargetFunction tf1, tf1_eq, tf2;
 
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@Before
-	public void setUp() throws Exception {
+	@BeforeEach
+	public void setUp() {
 		LinearCombination lc1, lc2;
 		
 		lc1 = new LinearCombination();
@@ -42,15 +34,12 @@ public class TargetFunctionTest {
 		
 	}
 
-	/**
-	 * Test method for {@link lp_problem.TargetFunction#TargetFunction(java.lang.String, lp_problem.TargetFunctionType, lp_problem.LinearCombination)}.
-	 */
 	@Test
 	public final void testTargetFunction() {
 	}
 
 	/**
-	 * Test method for {@link lp_problem.TargetFunction#hashCode()}.
+	 * Test method for {@link TargetFunction#hashCode()}.
 	 */
 	@Test
 	public final void testHashCode() {
@@ -59,7 +48,7 @@ public class TargetFunctionTest {
 	}
 
 	/**
-	 * Test method for {@link lp_problem.TargetFunction#equals(java.lang.Object)}.
+	 * Test method for {@link TargetFunction#equals(java.lang.Object)}.
 	 */
 	@Test
 	public final void testEqualsObject() {
@@ -68,28 +57,28 @@ public class TargetFunctionTest {
 	}
 
 	/**
-	 * Test method for {@link lp_problem.TargetFunction#clone()}.
+	 * Test method for {@link TargetFunction#clone()}.
 	 */
 	@Test
 	public final void testClone() {
 	}
 
 	/**
-	 * Test method for {@link lp_problem.TargetFunction#getIdentifier()}.
+	 * Test method for {@link TargetFunction#getIdentifier()}.
 	 */
 	@Test
 	public final void testGetIdentifier() {
 	}
 
 	/**
-	 * Test method for {@link lp_problem.TargetFunction#getType()}.
+	 * Test method for {@link TargetFunction#getType()}.
 	 */
 	@Test
 	public final void testGetType() {
 	}
 
 	/**
-	 * Test method for {@link lp_problem.TargetFunction#toString()}.
+	 * Test method for {@link TargetFunction#toString()}.
 	 */
 	@Test
 	public final void testToString() {

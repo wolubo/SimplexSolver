@@ -1,10 +1,8 @@
-/**
- * 
- */
-package lp_problem.unittest;
+package de.wbongartz.simplex_solver.lp_problem;
 
-import org.junit.Before;
-import org.junit.Test;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Wolfgang Bongartz
@@ -12,40 +10,31 @@ import org.junit.Test;
  */
 public class LPProblemTest {
 
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@Before
-	public void setUp() throws Exception {
+	@BeforeEach
+	public void setUp() {
 	}
 
 	@Test
 	public final void testLPProblemTargetFunction() {
 	}
 			
-	/**
-	 * Test method for {@link lp_problem.LPProblem#addRestriction(lp_problem.Restriction)}.
-	 */
 	@Test
 	public final void testAddRestriction() {
 	}
 
-	/**
-	 * Test method for {@link lp_problem.LPProblem#setTargetFunction(lp_problem.TargetFunction)}.
-	 */
 	@Test
 	public final void testGetTargetFunction() {
 	}
 
 	/**
-	 * Test method for {@link lp_problem.LPProblem#toString()}.
+	 * Test method for {@link LPProblem#toString()}.
 	 */
 	@Test
 	public final void testToString() {
 	}
 
 	/**
-	 * Test method for {@link lp_problem.LPProblem#clone()}.
+	 * Test method for {@link LPProblem#clone()}.
 	 */
 	@Test
 	public final void testClone() {

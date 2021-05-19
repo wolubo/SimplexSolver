@@ -1,8 +1,8 @@
-package solver;
+package de.wbongartz.simplex_solver.solver;
 
-import lp_problem.LPProblem;
-import process.*;
-import simplex_problem.SimplexProblem;
+import de.wbongartz.simplex_solver.lp_problem.LPProblem;
+import de.wbongartz.simplex_solver.process.*;
+import de.wbongartz.simplex_solver.simplex_problem.SimplexProblem;
 
 /**
  * Phase II initialisieren.

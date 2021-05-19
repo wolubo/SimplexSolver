@@ -1,4 +1,4 @@
-package process;
+package de.wbongartz.simplex_solver.process;
 
 /**
  * Signalisiert einen Fehler, der innerhalb eines Prozessschrittes aufgetreten ist.

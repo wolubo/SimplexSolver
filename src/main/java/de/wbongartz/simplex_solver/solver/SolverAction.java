@@ -1,9 +1,9 @@
-package solver;
+package de.wbongartz.simplex_solver.solver;
 
 import java.util.ArrayList;
 
-import process.ProcessEnvironment;
-import process.ProcessStep;
+import de.wbongartz.simplex_solver.process.ProcessEnvironment;
+import de.wbongartz.simplex_solver.process.ProcessStep;
 
 /**
  * Abstrakte Basisklasse aller Prozessschritte des Packages.

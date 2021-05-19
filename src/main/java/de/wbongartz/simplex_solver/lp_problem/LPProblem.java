@@ -1,4 +1,4 @@
-package lp_problem;
+package de.wbongartz.simplex_solver.lp_problem;
 
 import java.text.NumberFormat;
 import java.util.HashSet;

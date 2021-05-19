@@ -1,17 +1,10 @@
-/**
- * 
- */
-package lp_problem.unittest;
-
-import static org.junit.Assert.*;
+package de.wbongartz.simplex_solver.lp_problem;
 
 import java.util.TreeSet;
 
-import lp_problem.LinearCombination;
-import lp_problem.VarComponent;
-
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.fail;
 
 /**
  * @author Wolfgang Bongartz
@@ -21,11 +14,8 @@ public class LinearCombinationTest {
 	
 	private LinearCombination empty, lc1, lc1_eq, lc2, lc2_eq;
 
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@Before
-	public void setUp() throws Exception {
+	@BeforeEach
+	public void setUp() {
 		empty = new LinearCombination();
 		
 		lc1 = new LinearCombination();
@@ -50,7 +40,7 @@ public class LinearCombinationTest {
 	}
 
 	/**
-	 * Test method for {@link lp_problem.LinearCombination#hashCode()}.
+	 * Test method for {@link LinearCombination#hashCode()}.
 	 */
 	@Test
 	public final void testHashCode() {
@@ -74,7 +64,7 @@ public class LinearCombinationTest {
 	}
 
 	/**
-	 * Test method for {@link lp_problem.LinearCombination#toString()}.
+	 * Test method for {@link LinearCombination#toString()}.
 	 */
 	@Test
 	public final void testToString() {
@@ -89,7 +79,7 @@ public class LinearCombinationTest {
 	}
 
 	/**
-	 * Test method for {@link lp_problem.LinearCombination#equals(java.lang.Object)}.
+	 * Test method for {@link LinearCombination#equals(java.lang.Object)}.
 	 */
 	@Test
 	public final void testEqualsObject() {
@@ -109,7 +99,7 @@ public class LinearCombinationTest {
 	}
 
 	/**
-	 * Test method for {@link lp_problem.LinearCombination#clone()}.
+	 * Test method for {@link LinearCombination#clone()}.
 	 */
 	@Test
 	public final void testClone() {

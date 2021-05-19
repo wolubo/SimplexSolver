@@ -1,4 +1,4 @@
-package process;
+package de.wbongartz.simplex_solver.process;
 
 /**
  * Die Exception ExitProcess kann jederzeit während der Prozessabarbeitung geworfen werden, um den Prozess sofort zu beenden.

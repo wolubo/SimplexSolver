@@ -3,4 +3,4 @@
 
  * @author Wolfgang Bongartz
  */
-package lp_problem;
+package de.wbongartz.simplex_solver.lp_problem;

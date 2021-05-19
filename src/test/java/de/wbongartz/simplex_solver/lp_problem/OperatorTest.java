@@ -1,10 +1,10 @@
 /**
  * 
  */
-package lp_problem.unittest;
+package de.wbongartz.simplex_solver.lp_problem;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Wolfgang Bongartz
@@ -15,12 +15,12 @@ public class OperatorTest {
 	/**
 	 * @throws java.lang.Exception
 	 */
-	@Before
+	@BeforeEach
 	public void setUp() throws Exception {
 	}
 
 	/**
-	 * Test method for {@link lp_problem.Operator#toString()}.
+	 * Test method for {@link Operator#toString()}.
 	 */
 	@Test
 	public final void testToString() {

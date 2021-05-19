@@ -1,4 +1,4 @@
-package process;
+package de.wbongartz.simplex_solver.process;
 
 /**
  * Definiert die möglichen Zustände eines Prozesses.

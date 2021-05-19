@@ -1,9 +1,9 @@
-package solver;
+package de.wbongartz.simplex_solver.solver;
 
-import lp_problem.LPProblem;
+import de.wbongartz.simplex_solver.lp_problem.LPProblem;
 import parser.ParseException;
 import parser.Parser;
-import process.*;
+import de.wbongartz.simplex_solver.process.*;
 
 /**
  * Benutzereingabe in interne Darstellung überführen.

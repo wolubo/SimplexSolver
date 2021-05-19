@@ -3,4 +3,4 @@
  * 
  * @author Wolfgang Bongartz
  */
-package process.statements;
+package de.wbongartz.simplex_solver.process.statements;

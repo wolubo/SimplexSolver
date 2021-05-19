@@ -1,4 +1,4 @@
-package gui;
+package de.wbongartz.simplex_solver.gui;
 
 import java.awt.BorderLayout;
 import java.awt.FileDialog;
@@ -32,8 +32,8 @@ import java.util.prefs.Preferences;
 
 import parser.ParseException;
 import parser.TokenMgrError;
-import process.*;
-import solver.*;
+import de.wbongartz.simplex_solver.process.*;
+import de.wbongartz.simplex_solver.solver.*;
 
 /**
  * Die Klasse MainWindow implementiert das Hauptfenster. Das Hauptfenster besteht aus zwei Bereichen:
@@ -72,8 +72,10 @@ public class MainWindow extends JFrame implements DocumentListener, StateChanged
 	public MainWindow() {
 		super("SimplexSolver");
 
+		String rootDirectory = System.getProperty("user.dir");
+
 		Preferences root = Preferences.userRoot();
-		_preferences = root.node("/com/wlb/SimplexSolver");
+		_preferences = root.node("/de/wbongartz/SimplexSolver");
 
 		int left = _preferences.getInt("left", 0);
 		int top = _preferences.getInt("top", 0);
@@ -81,7 +83,7 @@ public class MainWindow extends JFrame implements DocumentListener, StateChanged
 		int height = _preferences.getInt("height", 600);
 		setBounds(left, top, width, height);
 
-		_filename = _preferences.get("filename", "." + File.separator + "examples" + File.separator + "fahrradbeispiel.lpp");
+		_filename = _preferences.get("filename", rootDirectory + File.separator + "examples" + File.separator + "fahrradbeispiel.lpp");
 		_processManager = new ProcessManager();
 		_processManager.addStateChangedListener(this);
 		_processManager.addStepExecutedListener(this);
@@ -106,7 +108,7 @@ public class MainWindow extends JFrame implements DocumentListener, StateChanged
 		_showPane = new JTextPane();
 		_showPane.setEditable(false);
 		_eKit = new HTMLEditorKit();
-		_eKit.getStyleSheet().importStyleSheet(this.getClass().getResource("/ressources/SimplexSolver.css"));
+		_eKit.getStyleSheet().importStyleSheet(this.getClass().getResource(rootDirectory + File.separator + "resources" + File.separator + "SimplexSolver.css"));
 		_showPane.setEditorKit(_eKit);
 		_showPane.setFont(font);
 		JScrollPane showScrollPane = new JScrollPane(_showPane);
@@ -114,7 +116,6 @@ public class MainWindow extends JFrame implements DocumentListener, StateChanged
 
 		// Text setzen
 		_showPane.setText("<HTML><BODY><b>ein Html-Text</b><br> zum Testen </BODY></HTML>");
-		
 
 		JPanel leftPane = new JPanel(new BorderLayout());
 		_splitPane.setLeftComponent(leftPane);
@@ -245,11 +246,9 @@ public class MainWindow extends JFrame implements DocumentListener, StateChanged
 
 	private void showAbout() {
 		String msg = "";
-		msg += "SimplexSolver ist eine Projektarbeit von Wolfgang Bongartz, die im Rahmen\n";
-		msg += "des VAWi-Studiums an der Universität Duisburg/Essen erstellt wurde.\n";
-		msg += "Betreuung: Prof. Dr. Natalia Kliewer\n";
+		msg += "SimplexSolver\n";
 		msg += "© Wolfgang Bongartz, 2016\n";
-		msg += "✍ mail@wolfgang-bongartz.de";
+		msg += "mail@wolfgang-bongartz.de";
 		JOptionPane.showMessageDialog(null,msg, "Über SimplexSolver",JOptionPane.INFORMATION_MESSAGE);
 	}
 

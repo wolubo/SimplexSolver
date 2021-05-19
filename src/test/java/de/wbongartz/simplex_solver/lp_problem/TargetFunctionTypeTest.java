@@ -1,10 +1,8 @@
-/**
- * 
- */
-package lp_problem.unittest;
+package de.wbongartz.simplex_solver.lp_problem;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 
 /**
  * @author Wolfgang Bongartz
@@ -12,11 +10,8 @@ import org.junit.Test;
  */
 public class TargetFunctionTypeTest {
 
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@Before
-	public void setUp() throws Exception {
+	@BeforeEach
+	public void setUp() {
 	}
 
 	@Test

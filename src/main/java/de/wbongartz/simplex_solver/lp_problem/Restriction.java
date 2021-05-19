@@ -1,4 +1,4 @@
-package lp_problem;
+package de.wbongartz.simplex_solver.lp_problem;
 
 import java.text.NumberFormat;
 import java.util.Locale;
@@ -160,7 +160,11 @@ public class Restriction {
 		if(this._linearCombination.equals(other._linearCombination)) {
 			if(this._operator.equals(other._operator)) { 
 				if(this._rightHandSide.equals(other._rightHandSide)) {
-					return this._slackVariable.equals(other._slackVariable);
+					if(this._slackVariable!=null) {
+						return this._slackVariable.equals(other._slackVariable);
+					} else {
+						return other._slackVariable==null;
+					}
 				}
 			}
 		}

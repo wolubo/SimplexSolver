@@ -1,7 +1,7 @@
-package process.statements;
+package de.wbongartz.simplex_solver.process.statements;
 
-import process.*;
-import process.ProcessEnvironment;
+import de.wbongartz.simplex_solver.process.*;
+import de.wbongartz.simplex_solver.process.ProcessEnvironment;
 
 /**
  * Kontrollstruktur: If-Then-Else

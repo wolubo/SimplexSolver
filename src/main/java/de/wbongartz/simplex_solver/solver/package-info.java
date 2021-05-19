@@ -8,4 +8,4 @@
  * 
  * @author Wolfgang Bongartz
  */
-package solver;
+package de.wbongartz.simplex_solver.solver;

@@ -1,4 +1,4 @@
-package simplex_problem;
+package de.wbongartz.simplex_solver.simplex_problem;
 
 import java.text.NumberFormat;
 import java.util.HashMap;
@@ -8,7 +8,7 @@ import java.util.TreeSet;
 
 import org.apache.commons.math3.fraction.BigFraction;
 
-import lp_problem.*;
+import de.wbongartz.simplex_solver.lp_problem.*;
 
 /**
  * Die Klasse SimplexProblem beinhaltet alles, was für das durchlaufen der Phase I des Simplex-Algorithmus nötig ist. Dazu wird das 

@@ -1,4 +1,4 @@
-package simplex_problem;
+package de.wbongartz.simplex_solver.simplex_problem;
 
 import java.text.NumberFormat;
 import java.util.HashMap;

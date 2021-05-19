@@ -1,11 +1,11 @@
-package solver;
+package de.wbongartz.simplex_solver.solver;
 
 import java.util.HashSet;
 
-import lp_problem.LPProblem;
-import lp_problem.Operator;
-import lp_problem.Restriction;
-import process.*;
+import de.wbongartz.simplex_solver.lp_problem.LPProblem;
+import de.wbongartz.simplex_solver.lp_problem.Operator;
+import de.wbongartz.simplex_solver.lp_problem.Restriction;
+import de.wbongartz.simplex_solver.process.*;
 
 /**
  * Erzeugen der Standardgleichungsform: Restriktionen mit Gleichheits-Operator umwandeln.

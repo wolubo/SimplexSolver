@@ -15,4 +15,4 @@
  * 
  * @author Wolfgang Bongartz
  */
-package process;
+package de.wbongartz.simplex_solver.process;

@@ -1,4 +1,4 @@
-package process;
+package de.wbongartz.simplex_solver.process;
 
 import java.util.HashMap;
 

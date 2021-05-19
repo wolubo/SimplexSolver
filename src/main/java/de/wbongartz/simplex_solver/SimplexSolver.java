@@ -1,6 +1,8 @@
+package de.wbongartz.simplex_solver;
+
 import java.awt.EventQueue;
 
-import gui.MainWindow;
+import de.wbongartz.simplex_solver.gui.MainWindow;
 
 
 /**

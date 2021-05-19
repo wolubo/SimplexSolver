@@ -1,9 +1,9 @@
-package solver;
+package de.wbongartz.simplex_solver.solver;
 
 import java.util.ArrayList;
 
-import process.*;
-import simplex_problem.SimplexProblem;
+import de.wbongartz.simplex_solver.process.*;
+import de.wbongartz.simplex_solver.simplex_problem.SimplexProblem;
 
 /**
  * Prüfen, ob das Problem tatsächlich lösbar ist (ob also eine zulässige Startbasis existiert oder eine solche ermittelt werden kann).

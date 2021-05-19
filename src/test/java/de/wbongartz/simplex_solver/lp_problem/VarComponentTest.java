@@ -1,18 +1,19 @@
-package lp_problem.unittest;
+package de.wbongartz.simplex_solver.lp_problem;
 
-import static org.junit.Assert.*;
-import lp_problem.VarComponent;
 
 import org.apache.commons.math3.fraction.BigFraction;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.fail;
+
 
 public class VarComponentTest {
 	
 	private VarComponent x1, x2, x1_eq, x2_neq;
 
-	@Before
-	public void setUp() throws Exception {
+	@BeforeEach
+	public void setUp() {
 		x1 = new VarComponent(BigFraction.ONE, "x1");
 		x2 = new VarComponent(2.0, "x2");
 		x1_eq = new VarComponent(BigFraction.ONE, "x1");

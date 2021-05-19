@@ -1,7 +1,7 @@
-package solver;
+package de.wbongartz.simplex_solver.solver;
 
-import lp_problem.*;
-import process.*;
+import de.wbongartz.simplex_solver.lp_problem.*;
+import de.wbongartz.simplex_solver.process.*;
 
 /**
  * Erzeugen der Standardgleichungsform: Minimierungs- in Maximierungsfunktion umwandeln.

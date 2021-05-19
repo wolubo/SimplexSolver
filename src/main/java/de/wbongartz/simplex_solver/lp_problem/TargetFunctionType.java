@@ -1,4 +1,4 @@
-package lp_problem;
+package de.wbongartz.simplex_solver.lp_problem;
 
 /**
  * Definiert alle zulässigen Zielfunktionsarten ('min' und 'max').
