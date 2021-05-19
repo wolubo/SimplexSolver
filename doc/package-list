@@ -1,9 +1,0 @@
-
-gui
-lp_problem
-lp_problem.unittest
-parser
-process
-process.statements
-simplex_problem
-solver
