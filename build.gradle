@@ -12,11 +12,6 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    //implementation group: 'net.java.dev.javacc', name: 'javacc', version: '7.0.4'
-    implementation 'org.apache.commons:commons-math3:3.6.1'
-}
-
 javacc {
     // configuration container for all javacc configurations
     configs {
@@ -43,6 +38,8 @@ test {
 }
 
 dependencies {
+    //implementation group: 'net.java.dev.javacc', name: 'javacc', version: '7.0.4'
+    implementation 'org.apache.commons:commons-math3:3.6.1'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
 }
